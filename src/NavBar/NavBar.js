@@ -1,8 +1,48 @@
-const NavBar = ({ logout }) => {
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import UserContext from "../Auth/UserContext";
+
+const NavBar = () => {
+  const { currentUser, logout } = useContext(UserContext);
+  console.debug("Navigation", "currentUser=", currentUser);
+
+  const loggedInUser = () => {
+    return (
+      <ul>
+        <li>
+          <NavLink to="/companies">Companies</NavLink>
+        </li>
+        <li>
+          <NavLink to="/jobs">Jobs</NavLink>
+        </li>
+        <li>
+          <NavLink to="/profile">Profile</NavLink>
+        </li>
+        <li>
+          <NavLink onClick={logout}>Logout</NavLink>
+        </li>
+      </ul>
+    );
+  };
+
+  const loggedOutUser = () => {
+    return (
+      <ul>
+        <li>
+          <NavLink to="/login">Login</NavLink>
+        </li>
+        <li>
+          <NavLink to="/signup">Signup</NavLink>
+        </li>
+      </ul>
+    );
+  };
+
   return (
-    <div>
-      <h1>Jobly</h1>
-    </div>
+    <nav>
+      <Link to="/">Jobly</Link>
+      {currentUser ? loggedInUser() : loggedOutUser()}
+    </nav>
   );
 };
 

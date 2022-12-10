@@ -1,4 +1,4 @@
-const JobCard = () => {
+const JobCard = ({ job }) => {
   return (
     <div>
       <p>{job.title}</p>
