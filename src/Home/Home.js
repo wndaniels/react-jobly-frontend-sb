@@ -1,7 +1,7 @@
 const Home = () => {
   return (
     <div>
-      <button to="/login">Login</button>
+      <button to="/login">TEST</button>
       <button to="/signup">Sign Up</button>
     </div>
   );

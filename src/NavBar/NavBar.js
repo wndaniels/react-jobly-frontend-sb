@@ -30,7 +30,9 @@ const NavBar = () => {
   const loggedOutUser = () => {
     return (
       <ul>
-        <li></li>
+        <li>
+          <NavLink to="/login">Login</NavLink>
+        </li>
         <li>
           <NavLink to="/signup">Signup</NavLink>
         </li>
