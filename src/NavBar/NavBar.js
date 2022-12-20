@@ -19,7 +19,9 @@ const NavBar = () => {
           <NavLink to="/profile">Profile</NavLink>
         </li>
         <li>
-          <NavLink onClick={logout}>Logout</NavLink>
+          <NavLink to="/" onClick={logout}>
+            Logout
+          </NavLink>
         </li>
       </ul>
     );
@@ -28,9 +30,7 @@ const NavBar = () => {
   const loggedOutUser = () => {
     return (
       <ul>
-        <li>
-          <NavLink to="/login">Login</NavLink>
-        </li>
+        <li></li>
         <li>
           <NavLink to="/signup">Signup</NavLink>
         </li>

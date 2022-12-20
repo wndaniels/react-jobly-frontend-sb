@@ -1,11 +1,18 @@
-const CompanyCard = ({ company }) => {
+import { Link } from "react-router-dom";
+
+const CompanyCard = ({ name, description, logoUrl, handle }) => {
   return (
-    <div>
+    <Link to={`/companies/${handle}`}>
       <div>
-        <p>{company.name}</p>
+        <h6>
+          {name}
+          {logoUrl && <img src={logoUrl} alt={name} />}
+        </h6>
+        <p>
+          <small>{description}</small>
+        </p>
       </div>
-      <p>{company.description}</p>
-    </div>
+    </Link>
   );
 };
 
