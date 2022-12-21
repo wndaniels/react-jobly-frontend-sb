@@ -15,15 +15,22 @@ const SearchForm = ({ searchFor }) => {
   }
 
   return (
-    <div>
-      <Form onSubmit={handleSubmit}>
-        <input
-          name={search}
-          placeholder="Type search here..."
-          value={search}
-          onChange={handleChange}
-        />
-        <button type="submit">Search</button>
+    <div className="SearchForm mb-4">
+      <Form className="row g-3 align-items-center" onSubmit={handleSubmit}>
+        <div className="col-7 offset-md-2">
+          <input
+            className="form-control"
+            name={search}
+            placeholder="Type search here..."
+            value={search}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="col-auto">
+          <button className="btn btn-sm btn-primary" type="submit">
+            Search
+          </button>
+        </div>
       </Form>
     </div>
   );

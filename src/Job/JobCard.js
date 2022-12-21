@@ -19,11 +19,13 @@ const JobCard = ({ id, title, salary, equity, companyName }) => {
   }
 
   return (
-    <div>
+    <div className="JobCard card">
       {applied}
-      <div>
-        <h6>{title}</h6>
-        <p>{companyName}</p>
+      <div className="card-body">
+        <h6 className="card-title">{title}</h6>
+        <p>
+          <small>{companyName}</small>
+        </p>
         {salary && (
           <div>
             <small>Salary: {salary}</small>
@@ -34,7 +36,11 @@ const JobCard = ({ id, title, salary, equity, companyName }) => {
             <small>Equity: {equity}</small>
           </div>
         )}
-        <button onClick={handleApply} disabled={applied}>
+        <button
+          onClick={handleApply}
+          disabled={applied}
+          className="btn btn-sm btn-secondary mt-2"
+        >
           {applied ? "Applied" : "Apply"}
         </button>
       </div>

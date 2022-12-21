@@ -52,50 +52,58 @@ const ProfileForm = () => {
   }
 
   return (
-    <div>
-      <h1>Profile Form</h1>
-      <div>
-        <div>
-          <Form onSubmit={handleSubmit}>
-            <div>
-              <label>Username</label>
-              <p>{formData.username}</p>
-            </div>
-            <div>
-              <label>First Name</label>
-              <input
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label>Last Name</label>
-              <input
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label>Email</label>
-              <input
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-              />
-            </div>
+    <div className="ProfileForm">
+      <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+        <h1 className="mb-3">Profile Form</h1>
+        <div className="card">
+          <div className="card-body">
+            <Form onSubmit={handleSubmit}>
+              <div className="d-grid gap-3">
+                <div className="form-group">
+                  <h3>{formData.username}</h3>
+                </div>
+                <div className="form-group">
+                  <label className="mb-1">First Name:</label>
+                  <input
+                    name="firstName"
+                    className="form-control"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label className="mb-1">Last Name:</label>
+                  <input
+                    name="lastName"
+                    className="form-control"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label className="mb-1">Email:</label>
+                  <input
+                    name="email"
+                    className="form-control mb-3"
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
 
-            {formError.length ? (
-              <Alert type="danger" messages={formError} />
-            ) : null}
+              {formError.length ? (
+                <Alert type="danger" messages={formError} />
+              ) : null}
 
-            {savedEdit ? (
-              <Alert type="success" messages={["Updated successfully."]} />
-            ) : null}
+              {savedEdit ? (
+                <Alert type="success" messages={["Updated successfully."]} />
+              ) : null}
 
-            <button onClick={handleSubmit}>Save Changes</button>
-          </Form>
+              <button className="btn btn-sm btn-primary float-right">
+                Save Changes
+              </button>
+            </Form>
+          </div>
         </div>
       </div>
     </div>

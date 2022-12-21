@@ -5,16 +5,18 @@ function JobCardList({ jobs, apply }) {
 
   return (
     <div className="JobCardList">
-      {jobs.map((job) => (
-        <JobCard
-          key={job.id}
-          id={job.id}
-          title={job.title}
-          salary={job.salary}
-          equity={job.equity}
-          companyName={job.companyName}
-        />
-      ))}
+      <div className="d-grid gap-3">
+        {jobs.map((job) => (
+          <JobCard
+            key={job.id}
+            id={job.id}
+            title={job.title}
+            salary={job.salary}
+            equity={job.equity}
+            companyName={job.companyName}
+          />
+        ))}
+      </div>
     </div>
   );
 }

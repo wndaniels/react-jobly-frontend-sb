@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import UserContext from "../Auth/UserContext";
+// import "./NavBar.css";
 
 const NavBar = () => {
   const { currentUser, logout } = useContext(UserContext);
@@ -8,18 +9,24 @@ const NavBar = () => {
 
   const loggedInUser = () => {
     return (
-      <ul>
-        <li>
-          <NavLink to="/companies">Companies</NavLink>
+      <ul className="navbar-nav ml-auto">
+        <li className="nav-item mr-4">
+          <NavLink className="nav-link" to="/companies">
+            Companies
+          </NavLink>
         </li>
-        <li>
-          <NavLink to="/jobs">Jobs</NavLink>
+        <li className="nav-item mr-4">
+          <NavLink className="nav-link" to="/jobs">
+            Jobs
+          </NavLink>
         </li>
-        <li>
-          <NavLink to="/profile">Profile</NavLink>
+        <li className="nav-item mr-4">
+          <NavLink className="nav-link" to="/profile">
+            Profile
+          </NavLink>
         </li>
-        <li>
-          <NavLink to="/" onClick={logout}>
+        <li className="nav-item mr-4">
+          <NavLink className="nav-link" to="/" onClick={logout}>
             Logout
           </NavLink>
         </li>
@@ -29,21 +36,30 @@ const NavBar = () => {
 
   const loggedOutUser = () => {
     return (
-      <ul>
-        <li>
-          <NavLink to="/login">Login</NavLink>
+      <ul className="navbar-nav ml-auto">
+        <li className="nav-item mr-4">
+          <NavLink className="nav-link" to="/login">
+            Login
+          </NavLink>
         </li>
-        <li>
-          <NavLink to="/signup">Signup</NavLink>
+        <li className="nav-item mr-4">
+          <NavLink className="nav-link" to="/signup">
+            Signup
+          </NavLink>
         </li>
       </ul>
     );
   };
 
   return (
-    <nav>
-      <Link to="/">Jobly</Link>
-      {currentUser ? loggedInUser() : loggedOutUser()}
+    <nav className="NavBar navbar navbar-expand-sm">
+      <div className="container-fluid">
+        <Link className="navbar-brand" to="/">
+          Jobly
+        </Link>
+
+        {currentUser ? loggedInUser() : loggedOutUser()}
+      </div>
     </nav>
   );
 };

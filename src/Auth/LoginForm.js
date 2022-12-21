@@ -1,3 +1,4 @@
+import Alert from "../Common/Alert";
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form } from "react-router-dom";
@@ -28,24 +29,42 @@ const LoginForm = () => {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <Form method="post" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          onChange={handleChange}
-        />
+    <div className="LoginForm">
+      <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+        <h1 className="mb-3">Login</h1>
+        <div className="card">
+          <div className="card-body">
+            <Form method="post" onSubmit={handleSubmit}>
+              <div className="d-grid gap-3">
+                <div className="form-group">
+                  <input
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    className="form-control"
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    className="form-control mb-3"
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
 
-        <button>Login</button>
-      </Form>
+              {formErr.length ? (
+                <Alert type="danger" messages={formErr} />
+              ) : null}
+
+              <button className="btn btn-sm btn-primary">Login</button>
+            </Form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
