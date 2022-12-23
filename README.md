@@ -21,7 +21,7 @@ Jobly is a React based application which runs with the Node.js backend API. User
 - Javascript
 
 ### Libraries/Tools:
-- React - [https://reactjs.org/docs/getting-started.html]
-- React Router - [https://reactrouter.com/en/main/start/overview]
-- jsonwebtoken - [https://www.npmjs.com/package/jsonwebtoken]
-- Bootstrap - [https://getbootstrap.com/docs/5.0/getting-started/introduction/]
+- React - https://reactjs.org/docs/getting-started.html
+- React Router - https://reactrouter.com/en/main/start/overview
+- jsonwebtoken - https://www.npmjs.com/package/jsonwebtoken
+- Bootstrap - https://getbootstrap.com/docs/5.0/getting-started/introduction/
